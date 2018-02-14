@@ -64,7 +64,7 @@ lazy val commonSettings =
   Seq(
     scalaVersion := "$scala_version$",
     organization := "$organisation$",
-    organizationName := "$organisation_name",
+    organizationName := "$organisation_name$",
     startYear := Some(2018),
     licenses += ("AGPL-3.0", url("https://www.gnu.org/licenses/agpl.html")),
     scalacOptions ++= Seq(
