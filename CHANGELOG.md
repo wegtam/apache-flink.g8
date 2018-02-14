@@ -20,3 +20,7 @@ Please follow the listed conventions when editing this file:
 
 ## Unreleased
 
+## 1.0.0 (2018-02-14)
+
+* initial release
+
