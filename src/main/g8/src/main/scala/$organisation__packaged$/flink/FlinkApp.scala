@@ -20,7 +20,6 @@ package $organisation$.flink
 import java.nio.file._
 import java.util.UUID
 
-import org.apache.flink.api.scala._
 import org.apache.flink.streaming.api.scala._
 
 object FlinkApp {
@@ -28,11 +27,13 @@ object FlinkApp {
     val streamEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
 
     val f = Files.createTempFile("flink-", ".csv")
+    val d = Files.deleteIfExists(f)
 
-    val stream: DataStream[(Int, UUID)] = streamEnvironment.fromCollection(for (i <- 0 to 1000) yield i)
-    val pairs = stream.map(n => n -> UUID.randomUUID())
+    val stream: DataStream[Int] =
+      streamEnvironment.fromCollection(for (i <- 0 to 1000) yield i)
+    val pairs: DataStream[(Int, UUID)] = stream.map(n => n -> UUID.randomUUID())
     pairs.writeAsCsv(f.toAbsolutePath.toString)
 
-    streamEnvironment.execute()
+    val _ = streamEnvironment.execute()
   }
 }
