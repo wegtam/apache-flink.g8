@@ -8,6 +8,7 @@ lazy val root =
     .enablePlugins(AutomateHeaderPlugin, GitVersioning, GitBranchPrompt)
     .settings(settings)
     .settings(
+      name := "$name$",
       libraryDependencies ++= Seq(
         library.flinkCassandra,
         library.flinkClients,
@@ -61,9 +62,9 @@ lazy val settings =
 
 lazy val commonSettings =
   Seq(
-    scalaVersion := "2.11.12",
-    organization := "com.wegtam",
-    organizationName := "Wegtam GmbH",
+    scalaVersion := "$scala_version$",
+    organization := "$organisation$",
+    organizationName := "$organisation_name",
     startYear := Some(2018),
     licenses += ("AGPL-3.0", url("https://www.gnu.org/licenses/agpl.html")),
     scalacOptions ++= Seq(
@@ -111,4 +112,3 @@ lazy val scalafmtSettings =
   Seq(
     scalafmtOnCompile := true
   )
-
