@@ -20,6 +20,12 @@ Please follow the listed conventions when editing this file:
 
 ## Unreleased
 
+## 1.0.1 (2018-02-16)
+
+### Fixed
+
+* flink version not set from property
+
 ## 1.0.0 (2018-02-14)
 
 * initial release
