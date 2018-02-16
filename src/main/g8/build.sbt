@@ -32,7 +32,7 @@ lazy val root =
 lazy val library =
   new {
     object Version {
-      val flink      = "1.4.0"
+      val flink      = "$flink_version$"
       val netty      = "4.1.21.Final"
       val postgresql = "42.1.4"
       val scalaCheck = "1.13.5"
